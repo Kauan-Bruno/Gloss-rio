@@ -1,6 +1,12 @@
 #Header {
-    background-color: brown;
+    background-color: brown; 
+    width:100%;
+    height:250px
+    font-size: 160px;
+    font-weight: Bold;
 }
+
+
 
 body {
     background-color: blueviolet;
