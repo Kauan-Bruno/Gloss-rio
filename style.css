@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,63 +6,84 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: #333;
+    line-height: 1.6;
     min-height: 100vh;
 }
 
-#Header {
-    background-color: #003cff;  /* Cor mais suave */
+/* Cabeçalho */
+#header {
+    background: linear-gradient(135deg, #0066ff, #0044cc);
     color: white;
-    width: 100%;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* Container principal */
+#glossario-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Cartão de palavra */
+.termo {
+    background: white;
+    border-radius: 12px;
     padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 5px solid #0066ff;
 }
 
-.Title {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-main {
-    padding: 2rem;
-}
-
-.Glossary {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.GlossaryItem {
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.GlossaryItem:hover {
+.termo:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.Paragraph {
-    font-size: 1.2rem;
-    text-align: center;
-    color: #333;
+.termo h2 {
+    color: #0066ff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Responsividade */
+.termo p {
+    color: #555;
+    font-size: 1rem;
+    display: none; /* Esconde descrição inicialmente */
+}
+
+.termo.aberto p {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsivo */
 @media (max-width: 600px) {
-    .Title {
-        font-size: 2rem;
-    }
-
-    .GlossaryItem {
-        padding: 0.8rem;
-    }
+    .title { font-size: 2.2rem; }
+    .termo { padding: 1.2rem; }
 }
