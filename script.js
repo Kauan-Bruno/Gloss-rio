@@ -20,7 +20,7 @@ const glossario = [
     {
         palavra: "ID",
         descricao: "Identificador único. Em HTML, usado com # para selecionar um elemento específico (ex: #header)."
-    }
+    },
     {   palavra: "Java",
         descricao: "JavaScript é a linguagem de programação da web.Ela faz seu site interativo: botões que funcionam, animações, formulários, jogos... tudo isso é JavaScript!"
 
